@@ -1,26 +1,22 @@
 import * as utilities from "./utilities.js";
 
-const neighborhoodTable = document.getElementById("neighborhood_table");
-const routeTable = document.getElementById("route_table");
-const streetTable = document.getElementById("street_table");
-const plazaTable = document.getElementById("plaza_table");
-const recycleTable = document.getElementById("recycle_table");
-const recyclePerformTable = document.getElementById("recyclePerform_table");
+const loadingEl = document.getElementById("loading");
 
-const displayAllTables = function () {
-  neighborhoodTable.style.display = "block";
-  routeTable.style.display = "block";
-  streetTable.style.display = "block";
-  plazaTable.style.display = "block";
-  recycleTable.style.display = "block";
-  recyclePerformTable.style.display = "block";
-};
+try {
+  await utilities.fetchNeighborhood();
+  await utilities.fetchRoute();
+  await utilities.fetchStreet();
+  await utilities.fetchPlaza();
+  await utilities.fetchRecycle();
+  await utilities.fetchRecyclePerformByMonth();
+} catch (err) {
+  loadingEl.textContent = "Failed to load data. Make sure the server is running on port 3000.";
+  loadingEl.style.color = "red";
+  throw err;
+}
 
-await utilities.fetchNeighborhood();
-await utilities.fetchRoute();
-await utilities.fetchStreet();
-await utilities.fetchPlaza();
-await utilities.fetchRecycle();
-await utilities.fetchRecyclePerform();
-await utilities.fetchRecyclePerformByMonth();
-displayAllTables();
+loadingEl.style.display = "none";
+
+document.getElementById("monthSelect").addEventListener("change", async () => {
+  await utilities.fetchRecyclePerformByMonth();
+});

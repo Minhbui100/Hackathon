@@ -139,8 +139,35 @@ input {
 }
 
 .table-wrapper {
-  max-height: 500px;   /* adjust height as needed */
-  overflow-y: auto;    /* enables vertical scroll */
+  max-height: 500px;
+  overflow-y: auto;
   border: 1px solid #ccc;
   padding: 10px;
+}
+
+#loading {
+  margin: 20px auto;
+  font-size: 1.2em;
+  color: #555;
+  background-color: rgba(255,255,255,0.85);
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 8px;
+}
+
+label[for="monthSelect"] {
+  font-weight: bold;
+  margin-right: 8px;
+  background-color: rgba(255,255,255,0.85);
+  padding: 4px 6px;
+  border-radius: 4px;
+}
+
+select#monthSelect {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  font-size: 1em;
+  margin-bottom: 10px;
+  cursor: pointer;
 }

@@ -3,119 +3,137 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Wat's Up</title>
+    <title>Downtown Houston Waste Bin Control</title>
     <link rel="stylesheet" href="./style.css" />
   </head>
 
   <body>
     <h1>Downtown Houston Public Waste Bin Control</h1>
+
+    <div id="loading">Loading data...</div>
+
     <div class="table-container">
 
-  <!-- Super Neighborhood List -->
-  <div>
-    <h2>Super Neighborhood List</h2>
-    <div class="table-wrapper">
-      <table id="neighborhood_table">
-        <thead>
-          <tr>
-            <th>SN Code</th>
-            <th>SN Name</th>
-          </tr>
-        </thead>
-        <tbody id="neighborhoodtable"></tbody>
-      </table>
+      <!-- Super Neighborhood List -->
+      <div>
+        <h2>Super Neighborhood List</h2>
+        <div class="table-wrapper">
+          <table id="neighborhood_table">
+            <thead>
+              <tr>
+                <th>SN Code</th>
+                <th>SN Name</th>
+              </tr>
+            </thead>
+            <tbody id="neighborhoodtable"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Route Zone List -->
+      <div>
+        <h2>Route Zone List</h2>
+        <div class="table-wrapper">
+          <table id="route_table">
+            <thead>
+              <tr>
+                <th>Route ID</th>
+                <th>SN Code</th>
+                <th>Pickup Date</th>
+                <th>Truck ID</th>
+              </tr>
+            </thead>
+            <tbody id="routetable"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Street List -->
+      <div>
+        <h2>Street List</h2>
+        <div class="table-wrapper">
+          <table id="street_table">
+            <thead>
+              <tr>
+                <th>Street ID</th>
+                <th>Street Name</th>
+                <th>Route ID</th>
+              </tr>
+            </thead>
+            <tbody id="streettable"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Plaza List -->
+      <div>
+        <h2>Plaza List</h2>
+        <div class="table-wrapper">
+          <table id="plaza_table">
+            <thead>
+              <tr>
+                <th>Plaza ID</th>
+                <th>Plaza Name</th>
+                <th>Street ID</th>
+                <th>Recycle Rate</th>
+              </tr>
+            </thead>
+            <tbody id="plazatable"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Recycling Bin List -->
+      <div>
+        <h2>Recycling Bin List</h2>
+        <div class="table-wrapper">
+          <table id="recycle_table">
+            <thead>
+              <tr>
+                <th>Recycling Bin ID</th>
+                <th>Plaza ID</th>
+              </tr>
+            </thead>
+            <tbody id="recycletable"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Recycling Pickup Record -->
+      <div>
+        <h2>Recycling Pickup Record</h2>
+        <label for="monthSelect">Filter by month:</label>
+        <select id="monthSelect">
+          <option value="all">All</option>
+          <option value="1">January</option>
+          <option value="2">February</option>
+          <option value="3">March</option>
+          <option value="4">April</option>
+          <option value="5">May</option>
+          <option value="6">June</option>
+          <option value="7">July</option>
+          <option value="8">August</option>
+          <option value="9">September</option>
+          <option value="10">October</option>
+          <option value="11">November</option>
+          <option value="12">December</option>
+        </select>
+        <div class="table-wrapper">
+          <table id="recyclePerform_table">
+            <thead>
+              <tr>
+                <th>Recycling Bin ID</th>
+                <th>Pickup Date</th>
+                <th>Volume</th>
+                <th>Pickup (Yes/No)</th>
+              </tr>
+            </thead>
+            <tbody id="recyclePerformtable"></tbody>
+          </table>
+        </div>
+      </div>
+
     </div>
-  </div>
-
-  <!-- Route Zone List -->
-  <div>
-    <h2>Route Zone List</h2>
-    <div class="table-wrapper">
-      <table id="route_table">
-        <thead>
-          <tr>
-            <th>Route ID</th>
-            <th>SN Code</th>
-            <th>Pickup Date</th>
-            <th>Truck ID</th>
-          </tr>
-        </thead>
-        <tbody id="routetable"></tbody>
-      </table>
-    </div>
-  </div>
-
-  <!-- Street List -->
-  <div>
-    <h2>Street List</h2>
-    <div class="table-wrapper">
-      <table id="street_table">
-        <thead>
-          <tr>
-            <th>Street ID</th>
-            <th>Street Name</th>
-            <th>Route ID</th>
-          </tr>
-        </thead>
-        <tbody id="streettable"></tbody>
-      </table>
-    </div>
-  </div>
-
-  <!-- Plaza List -->
-  <div>
-    <h2>Plaza List</h2>
-    <div class="table-wrapper">
-      <table id="plaza_table">
-        <thead>
-          <tr>
-            <th>Plaza ID</th>
-            <th>Plaza Name</th>
-            <th>Street ID</th>
-            <th>Recycle Rate</th>
-          </tr>
-        </thead>
-        <tbody id="plazatable"></tbody>
-      </table>
-    </div>
-  </div>
-
-  <div>
-    <h2>Recycling Bin List</h2>
-    <div class="table-wrapper">
-      <table id="recycle_table">
-        <thead>
-          <tr>
-            <th>Recycling Bin ID</th>
-            <th>Plaza ID</th>
-          </tr>
-        </thead>
-        <tbody id="recycletable"></tbody>
-      </table>
-    </div>
-  </div>
-
-
-  
-  <div>
-    <h2>Recycling Pickup Record</h2>
-    <div class="table-wrapper">
-      <table id="recyclePerform_table">
-        <thead>
-          <tr>
-            <th>Recycling Bin ID</th>
-            <th>Pickup Date</th>
-            <th>Volume</th>
-            <th>Pickup (Yes/No)</th>
-          </tr>
-        </thead>
-        <tbody id="recyclePerformtable"></tbody>
-      </table>
-    </div>
-  </div>
-
-
-
 
     <script type="module" src="./index.js"></script>
   </body>
