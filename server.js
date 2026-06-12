@@ -11,15 +11,6 @@ app.use(cors()); // Enable CORS for cross-origin requests
 // Serve static files from the "public" directory
 app.use(express.static(path.join(__dirname, "Restaurant")));
 
-/*
-const pool = new Pool({
-    user: 'postgres',
-    host: 'localhost',
-    database: 'recycle',
-    password: 'Dynamic@00',
-    port: 5432,
-});
-*/
 
 const pool = new Pool({
   user: config.user,

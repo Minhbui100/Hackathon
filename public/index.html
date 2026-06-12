@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wat's Up</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+
+  <body>
+    <h1>Downtown Houston Public Waste Bin Control</h1>
+    <div class="table-container">
+
+  <!-- Super Neighborhood List -->
+  <div>
+    <h2>Super Neighborhood List</h2>
+    <div class="table-wrapper">
+      <table id="neighborhood_table">
+        <thead>
+          <tr>
+            <th>SN Code</th>
+            <th>SN Name</th>
+          </tr>
+        </thead>
+        <tbody id="neighborhoodtable"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Route Zone List -->
+  <div>
+    <h2>Route Zone List</h2>
+    <div class="table-wrapper">
+      <table id="route_table">
+        <thead>
+          <tr>
+            <th>Route ID</th>
+            <th>SN Code</th>
+            <th>Pickup Date</th>
+            <th>Truck ID</th>
+          </tr>
+        </thead>
+        <tbody id="routetable"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Street List -->
+  <div>
+    <h2>Street List</h2>
+    <div class="table-wrapper">
+      <table id="street_table">
+        <thead>
+          <tr>
+            <th>Street ID</th>
+            <th>Street Name</th>
+            <th>Route ID</th>
+          </tr>
+        </thead>
+        <tbody id="streettable"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Plaza List -->
+  <div>
+    <h2>Plaza List</h2>
+    <div class="table-wrapper">
+      <table id="plaza_table">
+        <thead>
+          <tr>
+            <th>Plaza ID</th>
+            <th>Plaza Name</th>
+            <th>Street ID</th>
+            <th>Recycle Rate</th>
+          </tr>
+        </thead>
+        <tbody id="plazatable"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div>
+    <h2>Recycling Bin List</h2>
+    <div class="table-wrapper">
+      <table id="recycle_table">
+        <thead>
+          <tr>
+            <th>Recycling Bin ID</th>
+            <th>Plaza ID</th>
+          </tr>
+        </thead>
+        <tbody id="recycletable"></tbody>
+      </table>
+    </div>
+  </div>
+
+
+  
+  <div>
+    <h2>Recycling Pickup Record</h2>
+    <div class="table-wrapper">
+      <table id="recyclePerform_table">
+        <thead>
+          <tr>
+            <th>Recycling Bin ID</th>
+            <th>Pickup Date</th>
+            <th>Volume</th>
+            <th>Pickup (Yes/No)</th>
+          </tr>
+        </thead>
+        <tbody id="recyclePerformtable"></tbody>
+      </table>
+    </div>
+  </div>
+
+
+
+    <div class="form-container">
+      <h2>Add Order</h2>
+      <input type="number" id="billNumber" placeholder="Bill number" />
+      <input type="text" id="orderName" placeholder="Dish's name" />
+      <input type="number" id="orderPrice" placeholder="Price" />
+      <input type="number" id="orderQuantity" placeholder="Quantity" />
+      <button id="addOrder">Add Orders</button>
+
+      <h2>Delete Order</h2>
+      <input type="number" id="orderIdDelete" placeholder="Order number" />
+      <button id="deleteOrder">Delete Order</button>
+    </div>
+
+    <div class="form-container">
+      <h2>Payment</h2>
+      <input type="number" id="paymentOrderId" placeholder="Bill number" />
+      <input type="number" id="customerId" placeholder="Customer ID" />
+      <input type="number" id="tip" placeholder="Tip" />
+      <input type="text" id="cardId" placeholder="Card Number" />
+      <button id="payment">Payment</button>
+    </div>
+
+    <div class="form-container">
+      <h2>Add Customer</h2>
+      <input type="text" id="custName" placeholder="Name" />
+      <input type="text" id="custPhone" placeholder="Phone" />
+      <button id ="addCustomer">Add customer</button>
+
+      <h2>Delete Customer</h2>
+      <input type="number" id="custDelete" placeholder="Customer ID" />
+      <button id="deleteCustomer">Delete Customer</button>
+    </div>
+
+    <script type="module" src="./index.js"></script>
+  </body>
+</html>

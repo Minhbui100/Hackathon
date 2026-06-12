@@ -1,5 +1,5 @@
 {
   "user": "postgres",
-  "password": "Dynamic@00",
+  "password": "postgres",
   "port": 5432
 }
