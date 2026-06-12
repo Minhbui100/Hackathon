@@ -1,19 +1,40 @@
 HOW TO RUN OUR PROGRAM
-Step 1: Install dependencies:
-npm install express pg body-parser cors
 
-Step 2: Create database named "recycle" in your localhost by using this command
-"CREATE DATABASE recycle;"
+Step 1: Install dependencies
+Run the following command in Command Prompt (not PowerShell):
 
-Step 3 : in config.json file, input your database user, password and port in this following format
-{
-"user": "",
-"password": "",
-"port":
-}
+    npm install
 
-step 4: in your terminal, run "node server.js" to run back end server side
+Step 2: Create the database
+In PostgreSQL, run:
 
-step 5: open another terminal, run "node app.js" to run front end HTML
+    CREATE DATABASE recycle;
 
-step 6: Make sure both node server.js (port 3000) and node app.js (port 8000) are running, then open http://localhost:8000
+Then run the SQL schema file to create and populate all tables:
+
+    psql -U postgres -f Untitled-1.sql
+
+Step 3: Configure database credentials
+Edit config.json with your PostgreSQL details:
+
+    {
+      "user": "your_db_user",
+      "password": "your_db_password",
+      "port": 5432
+    }
+
+Step 4: Start the server
+In your terminal, run:
+
+    node server.js
+
+Step 5: Open the app
+Open your browser and go to:
+
+    http://localhost:3000
+
+---
+
+FEATURES
+- View Super Neighborhoods, Route Zones, Streets, Plazas, and Recycling Bins
+- View Recycling Pickup Records, filterable by month
